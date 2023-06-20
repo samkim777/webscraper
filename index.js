@@ -1,6 +1,7 @@
 const pupeteer = require("puppeteer");
 let products = [];
 const express = require('express');
+const serverless = require('serverless-http');
 const { filter } = require("domutils");
 const app = express()
 const PORT = process.env.PORT || 3001;
@@ -162,7 +163,7 @@ async function getItem(item_names) {
 
 
 
-app.get('/', async function(req,res) {
+app.get('/data', async function(req,res) {
   try{
   // Fetch user input data 
   let params = req.query.data
@@ -177,6 +178,8 @@ app.get('/', async function(req,res) {
   }
 })
 
-app.listen(PORT, () => {
-  console.log('Scraping on port: ' + PORT)
-})
+module.exports.handler = serverless(app);
+
+// app.listen(PORT, () => {
+//   console.log('Scraping on port: ' + PORT)
+// })

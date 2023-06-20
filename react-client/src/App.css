@@ -26,6 +26,24 @@
   text-align:center;
 }
 
+.head{
+  margin-top: 3vh;
+  background-color: lightgrey;
+  width: 150vh;
+  min-height:10vh;
+  float:right;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center vertically */
+  border-radius:10px;
+}
+.head h1{
+  font-size: 12px;
+  text-align: left;
+  text-indent: 3%;
+  padding-right: 20vw;
+}
+
+
 .search-button{
   text-align: center;
   margin-top: 10vh;

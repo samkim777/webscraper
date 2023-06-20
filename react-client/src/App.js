@@ -17,10 +17,8 @@ function DataLoaded() {
   let productList = [];
   for (const [key, value] of Object.entries(product)) {
     productList.push(<div key={key}>
-      <div className="item-image">   
-                                    <img src ={value.Image} alt = {value.Name} ></img> </div>
-                                    <div className="Item-box">
-                                    <a href = {value.Link} target="_blank"><h1>Purchase Link</h1></a>
+      <div className="item-image"> <img src ={value.Image} alt = {value.Name} ></img> </div>
+       <div className="Item-box"> <a href = {value.Link} target="_blank"><h1>Purchase Link</h1></a>
                                     <h1>{value.Name}  </h1>
                                     <h1>{value.Price} </h1> 
                                     <h1>{value.Rating}</h1> </div>
@@ -76,8 +74,14 @@ function getData() {
       <input className="input" type="text" onInput={e => setInput(e.target.value)}/>
       <button className="button" onClick={() => getData()}>Search</button>
                                                         </div>
-         
-         <div className="container">{fetchData()}</div>
+
+         <div className="container">  <div className="head">
+         {/* <h1>Product</h1>
+         <h1>Rating</h1>
+         <h1>Price</h1>
+         <h1>Link</h1> */}
+         </div>
+         {fetchData()}</div>
   </div>
       
   );
