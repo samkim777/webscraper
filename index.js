@@ -157,8 +157,6 @@ async function getItem(item_names) {
   return filtered_products;
 
 }
-// Why is it returning an empty list at the end?
-// Rating not showing the rating properly
 
 
 
@@ -172,8 +170,7 @@ app.get('/', async function(req,res) {
   res.send(results);
   }
   catch (error){
-    console.error(error)
-    res.status(500).json({error: 'An Error occured'})
+    console.error(error.response.data);     // NOTE - use "error.response.data` (not "error")
   }
 })
 
