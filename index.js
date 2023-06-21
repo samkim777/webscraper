@@ -1,8 +1,7 @@
 const pupeteer = require("puppeteer");
 let products = [];
 const express = require('express');
-const serverless = require('serverless-http');
-const { filter } = require("domutils");
+const cors = require("cors");
 const app = express()
 const PORT = process.env.PORT || 3001;
 let search_item = '';
@@ -12,13 +11,13 @@ let search_name = '';
 
 
 
-  /// 
-  app.all('/', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();
-   });
-  ///
+
+  // middleware
+const corsOptions = {
+  origin: "https://webscraper-front.onrender.com", // frontend URI (ReactJS)
+}
+app.use(express.json());
+app.use(cors(corsOptions));
 
 
 
@@ -163,7 +162,7 @@ async function getItem(item_names) {
 
 
 
-app.get('/data', async function(req,res) {
+app.get('/', async function(req,res) {
   try{
   // Fetch user input data 
   let params = req.query.data
@@ -178,8 +177,7 @@ app.get('/data', async function(req,res) {
   }
 })
 
-module.exports.handler = serverless(app);
 
-// app.listen(PORT, () => {
-//   console.log('Scraping on port: ' + PORT)
-// })
+app.listen(PORT, () => {
+  console.log('Scraping on port: ' + PORT)
+})
