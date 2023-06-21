@@ -158,6 +158,11 @@ async function getItem(item_names) {
 
 }
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 
 
 app.get('/', async function(req,res) {
