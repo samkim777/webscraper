@@ -165,9 +165,14 @@ app.get('/', async function(req,res) {
   // Fetch user input data 
   let params = req.query.data
   // Run the scraper on request
+  // Only run if parameter received
+  if (typeof params !== 'undefined') 
+  {
   let results = await getItem(params);
   // Send scraped JSON
   res.send(results);
+  }
+  
   }
   catch (error){
     console.error(error.response.data);     // NOTE - use "error.response.data` (not "error")
