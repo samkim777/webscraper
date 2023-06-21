@@ -161,7 +161,6 @@ async function getItem(item_names) {
 
 
 app.get('/', async function(req,res) {
-  try{
   // Fetch user input data 
   let params = req.query.data
   results = []
@@ -174,11 +173,6 @@ app.get('/', async function(req,res) {
   
   }
   res.send(results);
-  
-  }
-  catch (error){
-    console.error(error.response.data);     // NOTE - use "error.response.data` (not "error")
-  }
 })
 
 
