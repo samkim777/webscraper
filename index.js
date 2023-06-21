@@ -164,14 +164,16 @@ app.get('/', async function(req,res) {
   try{
   // Fetch user input data 
   let params = req.query.data
+  results = []
   // Run the scraper on request
   // Only run if parameter received
   if (typeof params !== 'undefined') 
   {
-  let results = await getItem(params);
+  results = await getItem(params);
   // Send scraped JSON
-  res.send(results);
+  
   }
+  res.send(results);
   
   }
   catch (error){
