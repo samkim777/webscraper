@@ -19,6 +19,10 @@ const corsOptions = {
 app.use(express.json());
 app.use(cors(corsOptions));
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 
 async function getItem(item_names) { 
@@ -158,10 +162,7 @@ async function getItem(item_names) {
 
 }
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
+
 
 
 
