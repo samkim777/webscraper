@@ -12,12 +12,6 @@ let search_name = '';
 
 
 
-  // middleware
-const corsOptions = {
-  origin: "https://webscraper-front.onrender.com", // frontend URI (ReactJS)
-}
-app.use(express.json());
-app.use(cors(corsOptions));
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
