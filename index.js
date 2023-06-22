@@ -17,8 +17,8 @@ let search_name = '';
 //   res.header('Access-Control-Allow-Origin', '*');
 //   next();
 // });
-app.use(cors({ origin: ['https://webscraper-front.onrender.com',
- 'https://webscrapeserver.onrender.com' ], credentials: true }))
+app.use(cors({ origin: true }));
+
 
 
 async function getItem(item_names) { 
