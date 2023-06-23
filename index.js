@@ -18,10 +18,11 @@ let search_name = '';
 //   next();
 // });
 // Add headers before the routes are defined
+// Add headers before the routes are defined
 app.use(function (req, res, next) {
 
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', 'https://webscraper-front.onrender.com');
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8888');
 
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
