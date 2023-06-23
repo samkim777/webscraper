@@ -11,14 +11,13 @@ let search_name = '';
 
 
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://webscraper-front.onrender.com');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
-
-
-app.use(cors({
-  origin: "https://webscraper-front.onrender.com"
-}
-))
-app.options('*', cors())
 
 
 
