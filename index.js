@@ -37,6 +37,9 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();
 });
+app.use(cors({
+  origin: 'https://webscraper-front.onrender.com'
+}));
 
 
 
