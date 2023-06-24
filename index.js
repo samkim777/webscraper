@@ -12,6 +12,7 @@ let search_name = '';
 
 
 app.use((req, res, next) => {
+  cors()
   res.setHeader('Access-Control-Allow-Origin', 'https://webscraper-front.onrender.com');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
