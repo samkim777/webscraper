@@ -2,7 +2,7 @@ const pupeteer = require("puppeteer");
 let products = [];
 const express = require('express');
 const cors = require("cors");
-const app = express()
+var app = express()
 const PORT = process.env.PORT || 3001;
 let search_item = '';
 let search_name = ''; 
@@ -13,11 +13,6 @@ let search_name = '';
 
 app.use((req, res, next) => {
   cors()
-  res.setHeader('Access-Control-Allow-Origin', 'https://webscraper-front.onrender.com');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader['x-requested-with'] = 'XMLHttpRequest';
-  next();
 });
 
 
