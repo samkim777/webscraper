@@ -162,6 +162,11 @@ async function getItem(item_names) {
 
 app.get('/', async function(req,res) {
   try{
+  // Try to fix cors
+  res.setHeader('Access-Control-Allow-Origin', 'https://webscraper-front.onrender.com');
+  res.setHeader('Access-Control-Allow-Methods', 'GET');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+
   // Fetch user input data 
   let params = req.query.data
   results = []
