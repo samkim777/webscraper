@@ -11,9 +11,9 @@ let search_name = '';
 
 
 
-app.use((req, res, next) => {
-  cors()
-});
+app.use(cors({
+  origin: 'https://webscraper-front.onrender.com'
+}));
 
 
 
