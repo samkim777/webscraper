@@ -11,9 +11,10 @@ let search_name = '';
 
 
 
-app.use(cors({
-  origin: 'https://webscraper-front.onrender.com'
-}));
+app.use((req, res, next) => {
+  console.log('CORS middleware executed');
+  next();
+});
 
 
 
