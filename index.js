@@ -59,7 +59,7 @@ async function getItem(item_names) {
    ///  await page.setUserAgent(userAgent.random().toString())
 
 
-    await page.goto(urls[j], { waitUntil: "domcontentloaded" },{timeout: 500000});
+    await page.goto(urls[j], { waitUntil: "domcontentloaded" });
 
     await page.waitForSelector(".a-section.a-spacing-base", {
       visible: false,
