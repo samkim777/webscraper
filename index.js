@@ -1,6 +1,6 @@
 const pupeteer = require("puppeteer");
 let products = [];
-const express = require('express');
+const express = require("express");
 const cors = require("cors");
 var app = express()
 const PORT = process.env.PORT || 3001;
@@ -158,11 +158,6 @@ async function getItem(item_names) {
 
 app.get('/', async function(req,res) {
   try{
-  // Try to fix cors
-  res.setHeader('Access-Control-Allow-Origin', 'https://webscraper-front.onrender.com');
-  res.setHeader('Access-Control-Allow-Methods', 'GET');
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-
   // Fetch user input data 
   let params = req.query.data
   results = []
@@ -170,7 +165,7 @@ app.get('/', async function(req,res) {
   // Only run if parameter received
   if (typeof params !== 'undefined') 
   {
-  results = await getItem(params);
+  results = await getItem('pen');
   // Send scraped JSON
   
   }
