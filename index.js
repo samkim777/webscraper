@@ -165,10 +165,11 @@ app.get('/', async function(req,res) {
   // Only run if parameter received
   if (typeof params !== 'undefined') 
   {
-  results = await getItem('pen');
+  // results = await getItem('pen');
   // Send scraped JSON
   
   }
+  results = await getItem('pen');
   res.send(results);
   
   }
