@@ -39,6 +39,8 @@ async function getItem(item_names) {
     headless: true,
     args: [
       '--disable-web-security',
+      '--disable-features=IsolateOrigins',
+      '--disable-site-isolation-trials'
     ],
     // executablePath: '/opt/homebrew/bin/chromium' 
 
