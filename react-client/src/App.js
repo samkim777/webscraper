@@ -32,7 +32,7 @@ function DataLoading()  {
 }
 
 function fetchData() {
-  if (product.length == 0) {
+  if (product.length === 0) {
     return <DataLoading/>
   } else return <DataLoaded/>
 }
